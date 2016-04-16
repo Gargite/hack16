@@ -35,10 +35,7 @@
     <input type="submit" value="Влез" class="btn btn-info btn-lg"></input>
     </div>
     </div>
-<<<<<<< HEAD
-    <button type="submit" class="btn btn-info">Send invitation</button>
-=======
->>>>>>> origin/master
+
   </form>
 </div>
   </body>
