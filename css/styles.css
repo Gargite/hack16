@@ -21,3 +21,7 @@ thead tr th,
 tbody tr td {
 	text-align: center;
 }
+
+.back {
+	padding-left: 0;
+}

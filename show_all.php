@@ -26,23 +26,34 @@
 			<th> Виж повече</th>
 		</thead>
 		<tbody>
-			<tr>
-				<td>ВР3055СА</td>
-				<td>asoisa</td>
-				<td><button class="btn btn-info">Виж</button></td>
-			</tr>
-			<tr>
-				<td>ВР3355СА</td>
-				<td>евф</td>
-				<td><button class="btn btn-info">Виж</button></td>
-			</tr>
-			<tr>
-				<td>ВР6455СА</td>
-				<td>агдф</td>
-				<td><button class="btn btn-info">Виж</button></td>
-			</tr>
-		</tbody>
+			<?php 
+			$servername = "localhost";
+			$username = "root";
+			$password = "";
+			$dbname = "hack16";
+			$conn = mysqli_connect($servername, $username, $password, $dbname);
+			// Check connection
+			if (!$conn) {
+			    die("Connection failed: " . mysqli_connect_error());
+			}
+			$sql = "SELECT * FROM offenders";
+			$result = mysqli_query($conn, $sql);
+			foreach ($result as $key => $value) {
+				echo "<tr>";
+				echo "<td>" . $value['reg_number'] . "</td>";
+				echo "<td>" . $value['date'] . "</td>";
+				echo "<td><a href='one_offender.php?id=$value[reg_number]'><button class='btn btn-info'>Виж Повече</button></a></td>";
+				echo "</tr>";
+			}
+			mysqli_close($conn);
+			 ?>
+				</tbody>
 	</table>
+	<br/>
+	<br/>
+	<div class="col-md-1 col-md-offset-11 col-sm-6 col-xs-10 col-xs-offset-1 back">
+	<a href="log.php"><button class="btn btn-danger">Назад</button></a>
+	</div>
 	</div>
 </body>
 

@@ -1,10 +1,3 @@
-<?php
-include('login.php'); // Includes Login Script
-
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,12 +12,12 @@ header("location: profile.php");
 </head>
 <body>
   <div class= "container col-md-12 col-sm-12 col-xs-12">
-      <form class="form-horizontal" method="post" action="log.php">
+      <form class="form-horizontal" method="post" action="login.php">
       <div class="row">
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
       <div class="form-group">
         <label for="username">Потребителско Име</label>
-        <input type="text" class="form-control" id="username" placeholder="Потребителско Име">
+        <input type="text" class="form-control" id="username" name="username" placeholder="Потребителско Име">
       </div>
       </div>
       </div>
@@ -32,7 +25,7 @@ header("location: profile.php");
       <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
       <div class="form-group">
         <label for="password">Парола</label>
-        <input type="password" class="form-control" id="password" placeholder="Парола">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Парола">
       </div>
       </div>
       </div>
@@ -42,6 +35,7 @@ header("location: profile.php");
       </div>
       </div>
     </form>
+
   </div>
 </body>
 </html>
