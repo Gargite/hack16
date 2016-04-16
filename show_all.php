@@ -22,8 +22,7 @@
 	<table id="offenders" class="table table-hover" cellspacing="0" width="100%">
 		<thead>
 			<th>Регистрационен номер на Нарушител</th>
-			<th> Брой нарушения</th>
-			<th> Виж повече</th>
+			<th> Дата</th>
 		</thead>
 		<tbody>
 			<?php 
@@ -36,13 +35,13 @@
 			if (!$conn) {
 			    die("Connection failed: " . mysqli_connect_error());
 			}
-			$sql = "SELECT * FROM offenders";
+			$sql = "SELECT count()* FROM offences group by $reg_number = reg_number";
 			$result = mysqli_query($conn, $sql);
 			foreach ($result as $key => $value) {
 				echo "<tr>";
 				echo "<td>" . $value['reg_number'] . "</td>";
 				echo "<td>" . $value['date'] . "</td>";
-				echo "<td><a href='one_offender.php?id=$value[reg_number]'><button class='btn btn-info'>Виж Повече</button></a></td>";
+				// echo "<td><a href='one_offender.php?id=$value[reg_number]'><button class='btn btn-info'>Виж Повече</button></a></td>";
 				echo "</tr>";
 			}
 			mysqli_close($conn);

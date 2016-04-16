@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php  date_default_timezone_set("Europe/Sofia");
-$now =  date('m-d-Y | H:i'); ?>
+$now =  date('d-m-Y | H:i:s'); ?>
 <div class="container">
 	<form class='form-group' method="post" action="insert.php">
 	<div class="row">
