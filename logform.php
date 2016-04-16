@@ -12,21 +12,30 @@
   <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-<div id= "main">
-<div id="log">
-    <form class="form-inline">
+<div class= "container col-md-12 col-sm-12 col-xs-12">
+    <form class="form-horizontal">
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
     <div class="form-group">
-      <label for="exampleInputName2">Name</label>
-      <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+      <label for="exampleInputName2">Потребителско Име</label>
+      <input type="text" class="form-control" id="exampleInputName2" placeholder="Потребителско Име">
     </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
     <div class="form-group">
-      <label for="exampleInputEmail2">Email</label>
-      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+      <label for="exampleInputEmail2">Парола</label>
+      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Парола">
     </div>
-    <button type="submit" class="btn btn-info">Send invitation</button>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-2 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1" style="padding-left: 0;">
+    <input type="submit" value="Влез" class="btn btn-info btn-lg"></input>
+    </div>
+    </div>
   </form>
-
-</div>
 </div>
   </body>
 </html>

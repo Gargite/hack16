@@ -1,12 +1,16 @@
-#main {
-	width: : 100%;
-}
-#log {
-	margin-left: 0 auto;
-	margin-right: 0 auto;
+html,
+body {
+	width: 100%;
+	padding: 0;
+	margin: 0;
 }
 .container {
-	margin-top: 3%;
+	margin-top: 10%;
+	padding: 0;
+}
+
+.row {
+	width: 100%;
 }
 
 table {
