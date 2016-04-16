@@ -1,0 +1,12 @@
+.container {
+	margin-top: 3%;
+}
+
+table {
+	border: 1px solid black;
+}
+
+thead tr th,
+tbody tr td {
+	text-align: center;
+}
