@@ -13,7 +13,7 @@
   </head>
   <body>
 <div class= "container col-md-12 col-sm-12 col-xs-12">
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post" action="log.php">
     <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
     <div class="form-group">
@@ -35,7 +35,6 @@
     <input type="submit" value="Влез" class="btn btn-info btn-lg"></input>
     </div>
     </div>
-
   </form>
 </div>
   </body>
