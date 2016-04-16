@@ -23,7 +23,7 @@
       <label for="exampleInputEmail2">Email</label>
       <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
     </div>
-    <button type="submit" class="btn btn-info">Login</button>
+    <button type="submit" class="btn btn-info">Send invitation</button>
   </form>
 
 </div>
