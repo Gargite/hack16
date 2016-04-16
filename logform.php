@@ -17,16 +17,16 @@
     <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
     <div class="form-group">
-      <label for="exampleInputName2">Потребителско Име</label>
-      <input type="text" class="form-control" id="exampleInputName2" placeholder="Потребителско Име">
+      <label for="username">Потребителско Име</label>
+      <input type="text" class="form-control" id="username" placeholder="Потребителско Име">
     </div>
     </div>
     </div>
     <div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-xs-10 col-xs-offset-1">
     <div class="form-group">
-      <label for="exampleInputEmail2">Парола</label>
-      <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Парола">
+      <label for="password">Парола</label>
+      <input type="password" class="form-control" id="password" placeholder="Парола">
     </div>
     </div>
     </div>
