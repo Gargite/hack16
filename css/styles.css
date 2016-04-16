@@ -1,3 +1,10 @@
+#main {
+	width: : 100%;
+}
+#log {
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
 .container {
 	margin-top: 3%;
 }
