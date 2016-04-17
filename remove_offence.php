@@ -28,19 +28,16 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
 			die("Connection failed: " . mysqli_connect_error());
 			}
-$reg_number = mysqli_real_escape_string($conn, $_POST['reg_number']);
-$date = mysqli_real_escape_string($conn, $_POST['date']);
-$user = mysqli_real_escape_string($conn, $_SESSION['username']);
-$picture = mysqli_real_escape_string($conn, $_POST['pic']);
-if(strlen($reg_number)>0 && strlen($date)>0 && strlen($user)>0 && strlen($picture)>0)
-{
+$reg_number = $_GET['id'];
+date_default_timezone_set("Europe/Sofia");
+$date =  date('d-m-Y | H:i:s'); 
 mysqli_query($conn, "SET NAMES 'utf8'");
-$query = mysqli_query($conn, "INSERT INTO `offences` (`reg_number`, `date`, `made_by`, `picture`) VALUES ('$reg_number', '$date', '$user', '$picture')");
+$query = mysqli_query($conn, "UPDATE `offences` SET `date_paid` = '$date' WHERE `reg_number` = '$reg_number' ");
 if($query)
 {?>
 <div class= "success">
-<div class="col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
-Успешно въведохте Нарушителят!
+<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+Успешно изчистихте Нарушенията на <?php echo $reg_number;?>!
 </div>
 <br/>
 <div class="col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
@@ -55,7 +52,7 @@ echo "Възникна грешка, моля опитайте по- късно"
 
 }
 mysqli_close($conn);
-}
+
 ?>
 </body>
 </html>

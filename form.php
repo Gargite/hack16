@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+?>
+
 <!DOCTYPE html>
 <head>
 	<title>ОП Паркинги и Гаражи</title>
@@ -12,7 +17,7 @@
 </head>
 <body>
 <?php  date_default_timezone_set("Europe/Sofia");
-$now =  date('d-m-Y | H:i:s'); ?>
+$now =  date('Y-m-d H:i:s'); ?>
 <div class="container">
 	<form class='form-group' method="post" action="insert.php">
 	<div class="row">
@@ -47,5 +52,10 @@ $now =  date('d-m-Y | H:i:s'); ?>
 	</div>
 </body>
 </html>
+<?php
+} else {
+    echo "Моля впишете се, за да видите тази страница <br/>";
+}
+?>
 
 

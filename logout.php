@@ -1,7 +1,9 @@
-<?php
+<?php 
 session_start();
-if(session_destroy()) // Destroying All Sessions
-{
-header("Location: index.php"); // Redirecting To Home Page
+unset($_SESSION['loggedin']);
+if ($_session) {
+	echo "errorrrrrrrrrrrrrrr";
+} else {
+header("Location: index.php");
 }
 ?>

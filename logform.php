@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +15,7 @@
   <script src="js/jquery.dataTables.min.js"></script>
   <link rel="stylesheet" href="css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <a href="logout.php"><button class="btn btn-danger">Отпиши се</button></a>
   </head>
   <body>
 <div class= "container col-md-12 col-sm-12 col-xs-12">
@@ -39,3 +45,9 @@
 </div>
   </body>
 </html>
+
+<?php
+} else {
+    echo "Моля впишете се, за да видите тази страница <br/>";
+}
+?>

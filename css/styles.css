@@ -25,3 +25,16 @@ tbody tr td {
 .back {
 	padding-left: 0;
 }
+
+.success {
+	font-size: 50px;
+	color: green;
+	margin-top: 100px;
+	text-shadow: 1px 1px #000;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 550px) {
+	.buttons .btn {
+		margin-top: 10px;
+	}
+}
