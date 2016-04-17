@@ -1,24 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-
-
-
-	?>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Паркинги и гаражи</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/jquery.min.js"></script>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="css/styles.css">
-<a href="logout.php"><button class="btn btn-danger">Отпиши се</button></a>
-</head>
-<body>
+	include('header.php');
+?>
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
@@ -41,7 +25,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 </div>
 </div>
 </div>
-
+<?php require_once('footer.php');?>
 </body>
 </html>
 <?php

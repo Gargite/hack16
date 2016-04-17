@@ -13,6 +13,7 @@ error_reporting(0);?>
 <link rel="stylesheet" href="css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="css/styles.css">
 </head>
+<div class="logo head" style="margin-left: 45%"><img src="img/logo.jpg" height="50px" width="50px;"></div>
 <body>
   <div class= "container col-md-12 col-sm-12 col-xs-12">
       <form class="form-horizontal" id="form" method="post" action="login.php">
@@ -43,7 +44,8 @@ error_reporting(0);?>
       </div>
 
     </form>
-
+     <?php require_once('footer.php');?>
   </div>
 </body>
-</html>
+</html> 
+

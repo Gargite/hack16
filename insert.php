@@ -1,24 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+	include('header.php');
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Паркинги и гаражи</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/jquery.min.js"></script>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="css/jquery.dataTables.min.css">
-<script type="text/javascript" href="js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="jquery.form.js"></script>
-<link rel="stylesheet" href="css/styles.css">
-<a href="logout.php"><button class="btn btn-danger">Отпиши се</button></a>
-</head>
-<body>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -34,7 +18,6 @@ $user = mysqli_real_escape_string($conn, $_SESSION['username']);
 $picture = mysqli_real_escape_string($conn, $_POST['pic']);
 if(strlen($reg_number)>0 && strlen($date)>0 && strlen($user)>0 && strlen($picture)>0)
 {
-mysqli_query($conn, "SET NAMES 'utf8'");
 $query = mysqli_query($conn, "INSERT INTO `offences` (`reg_number`, `date`, `made_by`, `picture`) VALUES ('$reg_number', '$date', '$user', '$picture')");
 if($query)
 {?>

@@ -1,23 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+	include('header.php');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>ОП Паркинги и Гаражи</title>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="js/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-	<a href="logout.php"><button class="btn btn-danger">Отпиши се</button></a>
-</head>
-
-<body>
 	<script type="text/javascript">
 	$(document).ready(function() {
     $('#offenders').DataTable( {
@@ -26,7 +11,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } );
 	</script>
 	<div class="container">
-	<table id="offenders" class="table table-hover" cellspacing="0" width="100%">
+	<table id="offenders" class="table table-hover table-responsive" cellspacing="0" width="100%" >
 		<thead>
 			<th>Регистрационен номер на Нарушител</th>
 			<th>Брой Нарушения</th>
@@ -80,11 +65,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	<br/>
 	<br/>
 	<div class="col-md-1 col-md-offset-11 col-sm-6 col-xs-10 col-xs-offset-1 back">
-	<a href="log.php"><button class="btn btn-danger">Назад</button></a>
 	</div>
 	</div>
+	<?php require_once('footer.php');?>
 </body>
-
 </html>
 <?php
 } else {

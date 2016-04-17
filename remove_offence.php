@@ -1,24 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+	include('header.php');
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Паркинги и гаражи</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/jquery.min.js"></script>
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="css/jquery.dataTables.min.css">
-<script type="text/javascript" href="js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="jquery.form.js"></script>
-<link rel="stylesheet" href="css/styles.css">
-<a href="logout.php"><button class="btn btn-danger">Отпиши се</button></a>
-</head>
-<body>
 <?php
 $servername = "localhost";
 $username = "root";
@@ -30,8 +14,7 @@ if (!$conn) {
 			}
 $reg_number = $_GET['id'];
 date_default_timezone_set("Europe/Sofia");
-$date =  date('d-m-Y | H:i:s'); 
-mysqli_query($conn, "SET NAMES 'utf8'");
+$date = date('d-m-Y | H:i:s'); 
 $query = mysqli_query($conn, "UPDATE `offences` SET `date_paid` = '$date' WHERE `reg_number` = '$reg_number' ");
 if($query)
 {?>
@@ -41,7 +24,6 @@ if($query)
 </div>
 <br/>
 <div class="col-md-10 col-md-offset-2 col-sm-10 col-sm-offset-2 col-xs-10 col-xs-offset-2">
-<a href="log.php"><button class="btn btn-danger">Назад</button></a>
 </div>
 </div>
 <?php
@@ -54,6 +36,7 @@ echo "Възникна грешка, моля опитайте по- късно"
 mysqli_close($conn);
 
 ?>
+<?php require_once('footer.php');?>
 </body>
 </html>
 <?php
